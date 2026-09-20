@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 requests
 beautifulsoup4
+=======
+requests
+>>>>>>> 5f7a288287fcda73a926ac19d60b6a0e309ed7a6
