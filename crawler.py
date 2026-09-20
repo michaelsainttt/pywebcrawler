@@ -12,7 +12,11 @@ def extract_links(html: str, base_url: str) -> set[str]:
     links = set()
 
     for tag in soup.find_all("a", href=True):
-        full_url = urljoin(base_url, tag["href"])
+        href = tag.get("href")
+        if not isinstance(href, str) or not href:
+            continue
+
+        full_url = urljoin(base_url, tag["href"]) # type: ignore
         if full_url.startswith(("http://", "https://")):
             links.add(full_url)
 
