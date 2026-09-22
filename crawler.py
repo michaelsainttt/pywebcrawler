@@ -62,15 +62,4 @@ if __name__ == "__main__":
     print(f"\nFinished crawling {len(visited_pages)} pages:")
     for page in sorted(visited_pages):
         print(page)
-
-    try:
-        html = fetch_url(url)
-        links = extract_links(html, url)
-        print(f"Found {len(links)} links")
-        for link in sorted(links):
-            print(link)
-            
-        print(f"Downloaded {len(html)} characters")
-        print(html[:500])  # Print the first 500 characters of the HTML
-    except requests.RequestException as error:
-        print(f"Could not fetch page: {error}")
+        
